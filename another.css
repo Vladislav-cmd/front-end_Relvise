@@ -1,0 +1,1093 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+/* -------------------------------------------------------------------------- */
+/* Обнуление */
+*,
+*::before,
+*::after {
+  /* сброшены все отступы */
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+}
+ul,
+ol,
+li {
+  list-style: none;
+}
+img {
+  /* выровнено по верху, чтобы не было снизу артефактного отступа */
+  vertical-align: top;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+html,
+body {
+  height: 100%;
+  line-height: 1;
+  font-size: 14px;
+  background: #fafafa;
+  color: #252B42;
+  font-weight: 500;
+  font-family: 'Montserrat', sans-serif;
+}
+/* -------------------------------------------------------------------------- */
+/* Чтобы скролл был на всем макете */
+.wrapper {
+  min-height: 100%;
+  overflow: hidden;
+  /* чтобы футер прибить к низу */
+  display: flex;
+  flex-direction: column;
+}
+/* Технический класс (ограничивающий контейнер) */
+._container {
+  max-width: 1046px;
+  /* Немного для адаптивности | верх и низ; слева и справа */
+  /* Чтобы не прилипало к краям */
+  padding: 0px 15px;
+  /* позволяет контейнеру выстроится посередине */
+  margin: 0px auto;
+  /* чтобы просто к ширине не прибовлять ещё 30 px из-за отступов */
+  box-sizing: сontent-box;
+}
+/*Класс для фоновой картинки*/
+._ibg {
+  position: relative;
+}
+._ibg img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+}
+/* -----ШАПКА СТРАНИЦЫ--------------------------------------------------------------------- */
+.header {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  /* Чтобы была на первом плане, поэтому такой большой индекс */
+  z-index: 50;
+}
+.header__container {
+  /* Выставление в ряд */
+  display: flex;
+  /* Лайфхак */
+  min-height: 104px;
+  /* выровняет объекты по центру */
+  align-items: center;
+}
+@media (max-width: 479px) {
+  .header__container {
+    min-height: 70px;
+  }
+}
+.header__logo {
+  font-size: 24px;
+  font-weight: 700;
+  /* Перенимает цвет, который установили для начала */
+  color: inherit;
+}
+.header__menu {
+  /* Отступ для элемента */
+  /* сверху справа снизу слева */
+  /* margin: 0px 0px 0px 133px; */
+  margin-left: 133px;
+}
+/* -------------------------------------------------------------------------- */
+/* Для адаптивности отступа ссылок в шапке */
+@media (max-width: 992px) {
+  .header__menu {
+    margin-left: 80px;
+  }
+}
+@media (max-width: 767px) {
+  .header__menu {
+    margin-left: 40px;
+  }
+}
+@media (max-width: 479px) {
+  .header__menu {
+    margin-left: 20px;
+  }
+}
+/* -------MENU------------------------------------------------------------------- */
+.menu {
+  /* Отступы безопасности для ссылок сверху чтоб не прилипали */
+  padding: 5px 0px;
+}
+.menu__list {
+  /* выстраиваем в ряд */
+  display: flex;
+  /* чтобы переходи если много элементов на другу строку как бы */
+  /* позволяет пунктам ломаться */
+  flex-wrap: wrap;
+}
+.menu__item {
+
+}
+/* not:(:last-child) - кроме последнего */
+.menu__item:not(:last-child) {
+  margin-right: 21px;
+}
+.menu__link {
+  /* line-height: 24px;
+  font-size: 14px;*/
+  /* Либо в процентах: */
+  /* 24px / 14px * 100 = 171,4% */
+  /* line-height: 171%; */
+  line-height: calc(24 / 14 * 100%);
+  font-weight: 600;
+  color: #737373;
+}
+.menu__link:hover {
+  text-decoration: underline;
+}
+@media (max-width: 479px) {
+  .menu__link {
+    font-size: 18px;
+  }
+}
+/* ----PAGE---------------------------------------------------------------------- */
+.page {
+  /* позволяем контенту увеличиваться и он прибивает футер вниз */
+  flex: 1 1 auto;
+}
+.page__main-block {
+
+}
+.page__services {
+  /*если нужно поднять блоки, то только отрицательным margin, так как только за отрицательным поднимутся все остальные блоки*/
+  /*Теперь поднять карточки вверх*/
+  margin: -111px 0px 0px 0px;
+  /*чтобы блоки показались*/
+  position: relative;
+  /*z-index: 2;*/
+}
+.page__advatages {
+
+}
+.page__practice {
+
+}
+.page__whoweare {
+
+}
+.page__clients:not(:last-child) {
+  margin: 0px 0px 10px 0px;
+}
+.page__subscribe {
+
+}
+.page__getintouch {
+
+}
+.page__contact {
+
+}
+
+/*-------------HEADER для страничных блоков-----------------------------------------------------------------------*/
+.header-block {
+  text-align:  center;
+  letter-spacing: 0.2px;
+}
+.header-block__title {
+  font-size: 40px;
+  line-height: calc(57 / 40 * 100%);
+  font-weight: 700;
+}
+.header-block__title:not(:last-child) {
+  margin: 0px 0px 10px 0px;
+}
+.header-block__sub-title {
+  color: #737373;
+  line-height: calc(57 / 40 * 100%);
+}
+@media (max-width: 992px) {
+  .header-block__title {
+    font-size: 35px;
+  }
+}
+@media (max-width: 767px) {
+  .header-block__title {
+    font-size: 30px;
+  }
+}
+
+/* ----MAIN-BLOCK---------------------------------------------------------------------- */
+.main-block {
+  position: relative;
+}
+.main-block__container {
+
+}
+.main-block__body {
+  padding: 184px 0px 191px 0px;
+  /*выведем контент поверх картинки*/
+  position: relative;
+  z-index: 2;
+  max-width: 400px;
+}
+@media (max-width: 992px) {
+  .main-block__body {
+    padding: 120px 0px 191px 0px;
+  }
+}
+@media (max-width: 479px) {
+  .main-block__body {
+    padding: 115px 0px 160px 0px;
+  }
+}
+/*Отступ в 35px ко всем элементам 1го уровня внутри body кроме последних*/
+.main-block__body > *:not(:last-child) {
+  margin: 0px 0px 35px 0px;
+}
+.main-block__title {
+  font-size: 58px;
+  line-height: calc(80 / 58 * 100%);
+  font-weight: 800;
+  letter-spacing: 0.2px;
+  color: #252B42;
+}
+@media (max-width: 480px) {
+  .main-block__title {
+    font-size: 42px;
+  }
+}
+.main-block__text {
+  color: #737373;
+  font-size: 20px;
+  line-height: calc(30 / 20 * 100%);
+}
+.main-block__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -10px 0px;
+}
+.main-block__button {
+  border-radius: 37px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 36px;
+  min-height: 48px;
+  font-weight: 700;
+  line-height: 150%;
+  text-align: center;
+  margin: 10px 0;
+  transition: all 0.3s ease 0s;
+}
+@media (max-width: 489px) {
+  .main-block__button {
+    flex: 1 1 100%;
+  }
+}
+@media (min-width: 489px) {
+  .main-block__button:not(:last-child) {
+  margin-right: 10px;
+  }
+}
+.main-block__button_orange {
+  background: #ff7b47;
+  color: #fff;
+}
+.main-block__button:hover {
+  background: #fff;
+  color: #ff7b47;
+}
+.main-block__button_border {
+  color: #0d5c63;
+  border: 1px solid #0d5c63;
+}
+.main-block__button_border:hover {
+  background-color: #0d5c63;
+  color: #fff;
+}
+.main-block__image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+/*Чтобы картина норм отображалась при уменьшении*/
+@media (max-width: 1300px) {
+  .main-block__image img {
+    object-position: right; /*чтобы люди всегда были видны справа*/
+  }
+}
+/*Чтобы текст был на темных картинках читабельным*/
+@media (max-width: 992px) {
+  .main-block__image {
+    opacity: 0.5;
+  }
+}
+
+/*----SERVICES---------------------------------------------------------------------------------------------------------*/
+.services {
+
+}
+.services__container {
+
+}
+.services__body {
+}
+@media (min-width: 670px) {
+  .services__body {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0px -15px;
+  }
+}
+.services__column {
+  flex: 0 1 33.333%;
+}
+@media (min-width: 670px) {
+  .services__column {
+    padding: 0px 15px;
+  }
+}
+@media (max-width: 992px) {
+  .services__column {
+    flex: 0 1 50%;
+  }
+  .services__column:last-child {
+    flex: 1 1 100%;
+  }
+  .services__column:not(:last-child) {
+   margin: 0px 0px 30px 0px;
+  }
+}
+.services__item {
+  height: 100%; /*чтобы одинаковый размер карточек*/
+  box-shadow: 0px 13px 19px rgba(0, 0, 0, 0.07); /*тут тень*/
+  background-color: #fff;
+  padding: 35px;
+}
+@media (max-width: 479px) {
+  .services__item {
+    padding: 25px;
+  }
+}
+.item-service {
+
+}
+.item-service_green {
+  background-color: #0d5c63;
+}
+.item-service_green .item-service__title {
+  color: #fff;
+}
+.item-service_green .item-service__text {
+  color: #fff;
+}
+.item-service *:not(:last-child) {
+  margin: 0px 0px 10px 0px;
+}
+.item-service__icon {
+
+}
+.item-service__title {
+  letter-spacing: 0.1px;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: calc(32 / 24 * 100%);
+}
+.item-service__text {
+  color: #737373;
+  line-height: calc(20 / 14 * 100%);
+}
+
+/*----ADVANTAGES---------------------------------------------------------------------------------------*/
+.advantages {
+  padding: 80px 0px;
+}
+@media (max-width: 1020px) {
+  .advantages {
+    padding: 50px 0px;
+  }
+}
+@media (max-width: 767px) {
+  .advantages {
+    padding: 30px 0px;
+  }
+}
+.advantages__container {}
+.advantages__header {
+  margin: 0px 0px 50px 0px;
+}
+@media (max-width: 767px) {
+  .advantages__header {
+    margin: 0px 0px 25px 0px;
+  }
+}
+.advantages__body {
+  display: flex;
+  margin: 0px -15px -30px;
+  flex-wrap: wrap;
+}
+.advantages__column {
+  padding: 0px 15px;
+  flex: 0 1 25%;
+  margin: 0px 0px 30px 0px;
+  box-shadow: 0px 13px 19px rgba(0, 0, 0, 0.07); /*тут тень*/
+}
+@media (max-width: 1020px) {
+  .advantages__column {
+    flex: 0 1 50%;
+  }
+}
+@media (max-width: 560px) {
+  .advantages__column {
+    flex: 0 1 100%;
+  }
+}
+.advantages__item {
+  background-color: #fff;
+  padding: 25px;
+  text-align: center;
+  font-weight: 700;
+}
+.advantages__item > * :not(:last-child) {
+  margin: 0px 0px 10px 0px;
+}
+.advantages__icon {
+  /*Выставляем одинаковую высоту иконок*/
+  height: 48px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+.advantages__value {
+  font-size: 40px;
+  line-height: calc(57 / 40 * 100%);
+  letter-spacing: 0.2px;
+}
+.advantages__text {
+  color: #737373;
+  font-size: 16px;
+  line-height: calc(24 / 16 * 100%);
+  letter-spacing: 0.1px;
+}
+
+/*--------PRACTICE--------------------------------------------------------------------------*/
+.practice {
+  padding: 125px 0px 80px 0px;
+}
+@media (max-width: 993px) {
+  .practice {
+    padding: 80px 0px 80px 0px;
+  }
+}
+@media (max-width: 767px) {
+  .practice {
+    padding: 0px 0px 40px 0px;
+  }
+}
+.practice__container {
+
+}
+.practice__header {
+  margin: 0px 0px 45px 0px;
+}
+@media (max-width: 767px) {
+  .practice__header {
+    margin: 0px 0px 25px 0px;
+  }
+}
+.practice__body {
+  margin: 0px -20px -30px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.practice__column {
+  padding: 0px 20px;
+  margin: 0px 0px 30px 0px;
+  flex: 0 1 25%;
+}
+@media (max-width: 1040px) {
+  .practice__column {
+    padding: 0px 20px;
+    flex: 0 1 50%;
+  }
+}
+@media (max-width: 630px) {
+  .practice__column {
+    padding: 0px 20px;
+    flex: 0 1 100%;
+  }
+}
+.practice__item {
+}
+.item-practice {
+  background-color: #fff;
+  /*чтобы колонки были одинкаовы, надо чтоб контент придавливал*/
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+}
+.item-practice__content {
+  padding: 30px;
+  /*чтобы колонки были одинкаовы, надо чтоб контент придавливал*/
+  flex: 1 1 auto;
+}
+.item-practice__link {
+  color: inherit;
+  /*для строчной ссылки не действует margin, поэтому inline-block*/
+  display: inline-block;
+}
+.item-practice__link:hover {
+  text-decoration: underline;
+}
+.item-practice__link:not(:last-child) {
+  margin: 0px 0px 15px 0px;
+}
+.item-practice__title {
+  letter-spacing: 0.1px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: calc(24 / 16 * 100%);
+}
+.item-practice__text {
+  color: #737373;
+  font-size: 14px;
+  line-height: calc(20 / 14 * 100%);
+}
+.item-practice__image {
+  /*так как это ссылка, то display block*/
+  display: block;
+  /*138 px / 230px * 100% получим нижний отступ в процентах*/
+  padding: 0px 0px 60% 0px;
+}
+/*-----------WHOWEARE------------------------------------------------------------------*/
+.whoweare {
+  padding: 80px 0px 130px 0px;
+  background: #ffffff;
+}
+.whoweare__container {
+
+}
+.whoweare__header {
+  margin: 0px 0px 100px 0px;
+}
+.whoweare__body {
+  display: flex;
+  align-items: flex-start;
+}
+.whoweare__video {
+  flex: 0 0 57%;
+  position: relative;
+  /*442(ширина видео) / 1042 (ограничивающего контейнера) * 100% */
+  padding: 0px 0px 42.25% 0px; /*и именно этот паддинг задаст ширину видео и высоту*/
+}
+.whoweare__video iframe {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+}
+.whoweare__content {
+  flex: 1 1 auto;
+  padding: 20px 0px 0px 121px;
+}
+.whoweare__title {
+  font-weight: 800;
+  font-size: 40px;
+  line-height: calc(57 / 40 * 100%);
+  letter-spacing: 0.2px;
+}
+.whoweare__title:not(:last-child) {
+  margin: 0px 0px 10px 0px;
+}
+.whoweare__top:not(:last-child) {
+  margin: 0px 0px 50px 0px;
+}
+/*При близких margin будет происходить схлопывание по блокам и будет отступ большего, то есть 50px*/
+.whoweare__text {
+  color: #737373;
+  line-height: calc(20 / 14 * 100%);
+}
+.whoweare__items {
+
+}
+.whoweare__item {
+
+}
+.whoweare__item:not(:last-child) {
+  margin: 0px 0px 30px 0px;
+}
+.item-whoweare {
+  display: flex;
+}
+.item-whoweare__icon {
+  flex: 0 0 32px;
+}
+.item-whoweare__body {
+  flex: 1 1 auto;
+  padding: 0px 0px 0px 20px;
+}
+.item-whoweare__title {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: calc(24 / 16 * 100%);
+}
+.item-whoweare__title:not(:last-child) {
+  margin: 0px 0px 5px 0px;
+}
+.item-whoweare__text {
+  color: #737373;
+  line-height: calc(24 / 16 * 100%);
+  /*Для большого текста чтобы его скрыть можно так пользоваться: */
+  white-space: nowrap;
+  width: 225px; /*нужно обязательно как-то ограничить*/
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+@media (max-width: 1080px) {
+  .whoweare__content {
+    padding: 0px 0px 0px 50px;
+  }
+}
+@media (max-width: 950px) {
+  .whoweare {
+    padding: 50px 0px 50px 0px;
+  }
+  .whoweare__body {
+    flex-direction: column-reverse;
+    /*И теперь чтобы видео вернулось, а не как бы под низом текста была, так как мы указали flex-start*/
+    /* то вернем по умолчанию значение */
+    align-items: stretch;
+    margin: 0px 0px 50px 0px;
+  }
+  .whoweare__title {
+    font-size: 24px;
+  }
+  .whoweare__content {
+    padding: 0px 0px 0px 0px;
+  }
+  .whoweare__video {
+    padding: 0px 0px 56.25% 0px;
+  }
+  .whoweare__video:not(:last-child) {
+    margin: 50px 0px 0px 0px;
+  }
+  .whoweare__header {
+    margin: 0px 0px 30px 0px;
+  }
+}
+@media (max-width: 767px) {
+  .whoweare {
+    padding: 20px 0px 50px 0px;
+  }
+  .whoweare__top:not(:last-child) {
+    margin: 0px 0px 30px 0px;
+  }
+  .whoweare__video:not(:last-child) {
+    margin: 30px 0px 0px 0px;
+  }
+}
+/*-------CLIENTS--------------------------------------------------------------------*/
+.clients {
+  padding: 50px 0;
+}
+.clients__container {
+  background: #fff7;
+}
+.clients__items {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.clients__item {
+  padding: 8px 15px;
+  flex: 0 1 16.6667%;
+  text-align: center;
+  min-width: 140px;
+}
+.clients__item img {
+  max-width: 100%;
+}
+
+/*--------SUBSCRIBE-----------------------------------------------------------------*/
+
+.subscribe {
+  /*для полоски черной делается*/
+  position: relative; /*родитель*/
+  padding: 0px 0px 20px 0px;
+}
+  /*для полоски черной делается */
+.subscribe:after { /*ПСЕВДОЭЛЕМЕНТ*/
+  background: #252b42;
+  content: "";
+  bottom: 0; /*задаем то, снизу или если убрать, то сверху будет*/
+  left: 0; /*прилип слева к краю*/
+  width: 100%;
+  position: absolute;
+  height: 77px;
+}
+.subscribe__container {}
+.subscribe__body {
+  /*для полоски черной, чтоб она была ниже*/
+  position: relative;
+  z-index: 2;
+  /*-----------*/
+  padding: 30px 50px;
+  align-items: center;
+  background: #17213c;
+  border-radius: 2px;
+}
+@media (min-width: 1070px) {
+  .subscribe__body {
+    margin: 0px 30px;
+  }
+}
+.subscribe__title {
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 0.1px;
+  font-size: 133%;
+  line-height: 32px;
+}
+@media (max-width: 810px) {
+  .subscribe__title {
+    margin: 0px 0px 20px 0px;
+  }
+  .subscribe__body {
+    margin: 0px -15px;
+    padding: 20px 25px;
+  }
+}
+@media (min-width: 810px) {
+  .subscribe__title {
+    max-width: 266px;
+  }
+  .subscribe__body {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+.subscribe__form {
+  flex: 0 1 50%;
+  display: flex;
+  align-items: center;
+}
+.subscribe__input {
+  width: 100%;
+  flex: 1 1 auto;
+  background: #f9f9f9;
+  min-height: 58px;
+  color: #737373;
+  padding: 0px 20px;
+  border: 1px solid #e6e6e6;
+  box-sizing: border-box;
+  border-radius: 5px 0 0 5px;
+  border-right: 0;
+}
+/*когда нажато на поле*/
+.subscribe__input:focus {
+  color: #000;
+}
+.subscribe__button {
+  background: #FF7B47;
+  border: 1px solid #E6E6E6;
+  box-sizing: border-box;
+  border-radius: 0px 5px 5px 0px;
+  display: flex;
+  min-height: 58px;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  text-align: center;
+  color: #fff;
+  padding: 15px 22.5px;
+  transition: all 0.3s ease 0s;
+}
+.subscribe__button:hover {
+  background: #BA471A;
+}
+@media (max-width: 400px) {
+  .subscribe__button {
+    padding: 0px 15px;
+  }
+  .subscribe__input {
+    padding: 0px 15px;
+  }
+}
+
+/*------------GETINTOUCH------------------------------------------------------------*/
+.getintouch {
+  padding: 80px 0px 135px 0px;
+}
+.getintouch__container {}
+.getintouch__header {
+  margin: 0px 0px 80px 0px;
+}
+.getintouch__items {
+  margin: 0px -15px;
+}
+.getintouch__item {
+  flex: 0 1 33.333%;
+}
+.item-getintouch {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  padding: 50px 15px;
+}
+.item-getintouch > *:not(:last-child) {
+  margin: 0px 0px 15px 0px;
+}
+.item-getintouch_active {
+  background: #252b42;
+  color: #fff;
+  padding: 80px 15px;
+}
+.item-getintouch_active .item-getintouch__button {
+  border: 1px solid #fff;
+  color: #fff;
+}
+.item-getintouch__icon {
+
+}
+.item-getintouch__emails {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.item-getintouch__email {
+  color: inherit;
+  font-weight: 600;
+  line-height: 150%;
+  font-size: 16px;
+}
+.item-getintouch__email:hover {
+  text-decoration: underline;
+}
+.item-getintouch__label {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: calc(24 / 16 * 100%);
+}
+.item-getintouch__button {
+  border: 1px solid #ff7b47;
+  min-height: 44px;
+  line-height: 142%;
+  color: #ff7b47;
+  font-weight: 600;
+  display: flex;
+  padding: 5px 20px;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  border-radius: 5px;
+  /*для анимации при наведении*/
+  transition: all 0.3s ease 0s;
+}
+.item-getintouch__button:hover {
+  background-color: #ff7b47;
+  color: #fff;
+}
+@media (min-width: 992px) {
+  .getintouch__items {
+    margin: 0;
+    display: flex;
+    align-items: center;
+  }
+}
+@media (max-width: 992px) {
+  .getintouch {
+    padding: 50px 0px;
+  }
+  .getintouch__header {
+   margin: 0px 0px 50px 0px;
+  }
+  .item-getintouch_active {
+    padding: 50px 15px;
+  }
+}
+@media (max-width: 767px) {
+  .getintouch__header {
+    margin: 0px 0px 30px 0px;
+  }
+}
+
+/*-----------CONTACT----------------------------------------------------------------*/
+.contact {
+  background: #fff;
+  padding: 40px 0px;
+}
+.contact__content {
+  padding: 0px 0px 20px 0px;
+}
+.contact__container {}
+@media (min-width: 767px) { /*минимальная ширики, когда будет выполняться*/
+  .contact__body {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .contact__content {
+    padding: 0px 20px 0px 0px;
+  }
+}
+.contact__title {
+  font-weight: 700;
+  letter-spacing: 0.1px;
+  font-size: 24px;
+  line-height: 133%;
+}
+.contact__title:not(:last-child) {
+  margin: 0px 0px 10px 0px;
+}
+.contact__text {
+  color: #737373;
+  line-height: 142%;
+}
+.contact__button {
+  display: flex;
+  background-color: #ff7b47;
+  border-radius: 5px;
+  min-height: 58px;
+  padding: 5px 40px;
+  justify-content: center;
+  transition: background-color 0.3s ease 0s;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+}
+.contact__button:hover {
+  background-color: #ff7b77;
+}
+
+/* ----ПОДВАЛ---------------------------------------------------------------------- */
+.footer {}
+.footer__top {
+  background: #17213c;
+  padding: 35px 0px;
+}
+.footer__main {}
+.footer__row {
+  display: flex;
+  /*отступы безопасности*/
+  margin: 0px -15px;
+  flex-wrap: wrap;
+}
+.footer__column {
+  /*отступы безопасности*/
+  padding: 15px 15px;
+  flex: 0 1 16.667%;
+}
+.footer__column:last-child {
+  flex: 0 1 33.334%;
+}
+@media (max-width: 992px) {
+  .footer__column {
+    flex: 0 1 25%;
+  }
+  .footer__column:last-child {
+    flex: 0 1 100%;
+  }
+}
+@media (max-width: 700px) {
+  .footer__column {
+    flex: 0 1 50%;
+  }
+}
+.footer__label {
+  color: #fff;
+  font-weight: 700;
+  font-size: 16px;
+  list-style: 150%;
+  margin: 0px 0px 20px 0px;
+}
+.footer__menu {}
+.menu-footer {}
+.menu-footer__list {}
+.menu-footer__item:not(:last-child) {
+  margin: 0px 0px 10px 0px;
+}
+.menu-footer__link {
+  color: #fff;
+  letter-spacing: 0.2px;
+  line-height: 171%;
+}
+.menu-footer__link:hover {
+  text-decoration: underline;
+}
+.footer__contacts {}
+.contacts-footer {
+  display: flex;
+  flex-direction: column;
+}
+.contacts-footer__item {
+  padding: 0px 0px 0px 34px;
+  display: flex;
+  align-items: center;
+  min-height: 30px;
+  color: #ffffff;
+  line-height: 142%;
+}
+.contacts-footer__item:hover {
+  text-decoration: underline;
+}
+.contacts-footer__item:not(:last-child) {
+  margin: 0px 0px 12px 0px;
+}
+.contacts-footer__item_phone {
+  /*или вместо left (то есть по середине контентного текста) поставить 0 0 прибьет к верху строки*/
+  background: url('/another/footer/icons/01.svg') 0 0 no-repeat;
+}
+.contacts-footer__item_map {
+  background: url('/another/footer/icons/02.svg') 0 0 no-repeat;
+}
+.contacts-footer__item_email {
+  background: url('/another/footer/icons/03.svg') 0 0 no-repeat;
+}
+.footer__bottom {
+  padding: 25px 0px;
+}
+.footer__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer__copy {
+  color: #737373;
+  line-height: 171%;
+}
+.footer__social {}
+.social {
+  display: flex;
+  align-items: center;
+}
+.social__item:not(:last-child) {
+  margin: 0px 20px 0px 0px;
+}
+@media (max-width: 767px) {
+  .footer__container {
+    flex-direction: column;
+  }
+  .footer__copy {
+    margin: 0px 0px 15px 0px;
+    text-align: center;
+  }
+}

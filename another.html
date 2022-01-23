@@ -1,27 +1,16 @@
-<!--чтобы подгружать статические файлы-->
-<!-- {% load static %} -->
 <!DOCTYPE html>
-<!--Чтение сайта идет сверзу вниз, поэтому блок со скрипатми внизу всегда-->
 <html lang="ru">
   <head>
     <meta charset="UTF-8">
-    <!--обновление страницы сайта,где контент это раз в сколько сек-->
-    <!-- <meta http-equiv="Refresh" content="5" /> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--Также для кириллицы подключаем дополнительно в конец &display=swap&subset=cyrillic-ext-->
-    <!--<link href="https://fonts.googleapis.com/css2?family=Montserrat:regular,500,600,700,900&display=swap&subset=cyrillic-ext" rel="stylesheet">-->
-    <!--Но нам здесь это не нужно только &display=swap-->
-    <!--<link href="https://fonts.googleapis.com/css2?family=Montserrat:regular,500,600,700,800&display=swap" rel="stylesheet">-->
     <link rel="stylesheet" href="{% static 'environment/another.css' %}">
     <!-- При использовании PREPROSS то полный путь, тогда все работает -->
-    <link rel="stylesheet" href="/another.css">
+    <link rel="stylesheet" href="/environment/static/environment/another.css">
     <title>ANOTHER</title>
   </head>
   <body>
-    <!--именно в отдельном классе все чтобы был скролл для страницы не только колесиком-->
     <div class="wrapper">
       <header class="header">
-        <!--_container уже применит ограничения ширины и центровку-->
         <div class="header__container _container">
           <a href="" class="header__logo">
             Relvise
@@ -61,7 +50,7 @@
             </div>
           </div>
           <div class="main-block__image _ibg">
-            <img src="/another/cover.jpg" alt="cover">
+            <img src="/pictures/another/cover.jpg" alt="cover">
           </div>
         </div>
 
@@ -71,7 +60,7 @@
               <div class="services__column">
                 <div class="services__item item-service">
                   <div class="item-service__icon">
-                    <img src="/another/services/01.svg" alt="Environmental Consulting">
+                    <img src="/pictures/another/services/01.svg" alt="Environmental Consulting">
                   </div>
                   <h3 class="item-service__title">Environmental Consulting</h3>
                   <div class="item-service__text">We focus on ergonomics and meeting you where you work.</div>
@@ -80,7 +69,7 @@
               <div class="services__column">
                 <div class="services__item item-service">
                   <div class="item-service__icon">
-                    <img src="/another/services/02.svg" alt="Finance and consultancy">
+                    <img src="/pictures/another/services/02.svg" alt="Finance and consultancy">
                   </div>
                   <h3 class="item-service__title">Finance and consultancy </h3>
                   <div class="item-service__text">Just type what's on your mind and we'll get you there.</div>
@@ -89,7 +78,7 @@
               <div class="services__column">
                 <div class="services__item item-service item-service_green">
                   <div class="item-service__icon">
-                    <img src="/another/services/03.svg" alt="Financial Services Consulting">
+                    <img src="/pictures/another/services/03.svg" alt="Financial Services Consulting">
                   </div>
                   <h3 class="item-service__title">Financial Services Consulting</h3>
                   <div class="item-service__text">the quick fox jumps over the lazy dog</div>
@@ -106,7 +95,7 @@
             <div class="advantages__header header-block">
               <h2 class="header-block__title">Designing Better Experience</h2>
               <div class="header-block__sub-title">
-                Problems trying to resolve the conflict between the two major realms <br> of
+                Problems trying to resolve the conflict between the two major realms <br> of 
                 Classical physics: Newtonian mechanics
               </div>
             </div>
@@ -114,7 +103,7 @@
               <div class="advantages__column">
                 <div class="advantages__item">
                   <div class="advantages__icon">
-                    <img src="/another/advantages/01.svg" alt="Consumer Products">
+                    <img src="/pictures/another/advantages/01.svg" alt="Consumer Products">
                   </div>
                   <div class="advantages__value">972 +</div>
                   <div class="advantages__text">Consumer Products</div>
@@ -123,7 +112,7 @@
               <div class="advantages__column">
                 <div class="advantages__item">
                   <div class="advantages__icon">
-                    <img src="/another/advantages/02.svg" alt="Financial Services ">
+                    <img src="/pictures/another/advantages/02.svg" alt="Financial Services ">
                   </div>
                   <div class="advantages__value">181 +</div>
                   <div class="advantages__text">Financial Services</div>
@@ -132,7 +121,7 @@
               <div class="advantages__column">
                 <div class="advantages__item">
                   <div class="advantages__icon">
-                    <img src="/another/advantages/03.svg" alt="Environmental">
+                    <img src="/pictures/another/advantages/03.svg" alt="Environmental">
                   </div>
                   <div class="advantages__value">98%</div>
                   <div class="advantages__text">Environmental</div>
@@ -141,7 +130,7 @@
               <div class="advantages__column">
                 <div class="advantages__item">
                   <div class="advantages__icon">
-                    <img src="/another/advantages/04.svg" alt="Business & Finance">
+                    <img src="/pictures/another/advantages/04.svg" alt="Business & Finance">
                   </div>
                   <div class="advantages__value">746 +</div>
                   <div class="advantages__text">Business & Finance</div>
@@ -170,9 +159,9 @@
                     <div class="item-practice__text">
                       Newton thought that light was made up of particles, but then it was discovered
                     </div>
-                  </div>
+                  </div>  
                   <a href="" class="item-practice__image _ibg">
-                    <img src="/another/practice/01.jpg" alt="A single source of truth">
+                    <img src="/pictures/another/practice/01.jpg" alt="A single source of truth">
                   </a>
                 </article>
               </div>
@@ -185,9 +174,9 @@
                     <div class="item-practice__text">
                       “Quantum mechanics” is the description of the behaviour of matter
                     </div>
-                  </div>
+                  </div>  
                   <a href="" class="item-practice__image _ibg">
-                    <img src="/another/practice/02.jpg" alt="Fastest way to organize">
+                    <img src="/pictures/another/practice/02.jpg" alt="Fastest way to organize">
                   </a>
                 </article>
               </div>
@@ -200,9 +189,9 @@
                     <div class="item-practice__text">
                       They describe a universe consisting of bodies moving
                     </div>
-                  </div>
+                  </div>  
                   <a href="" class="item-practice__image _ibg">
-                    <img src="/another/practice/03.jpg" alt="Fastest way to take action">
+                    <img src="/pictures/another/practice/03.jpg" alt="Fastest way to take action">
                   </a>
                 </article>
               </div>
@@ -213,11 +202,11 @@
                       <h4 class="item-practice__title">Work better together</h4>
                     </a>
                     <div class="item-practice__text">
-                      They finally obtained a consistent description of the behaviour
+                      They finally obtained a consistent description of the behaviour 
                     </div>
                   </div>
                   <a href="" class="item-practice__image _ibg">
-                    <img src="/another/practice/04.jpg" alt="Work better together">
+                    <img src="/pictures/another/practice/04.jpg" alt="Work better together">
                   </a>
                 </article>
               </div>
@@ -231,29 +220,28 @@
               <h2 class="header-block__title">Who We Are</h2>
               <div class="header-block__sub-title">
                 Problems trying to resolve the conflict between the two major realms <br>
-                of Classical physics: Newtonian mechanics
+                of Classical physics: Newtonian mechanics  
               </div>
             </div>
             <div class="whoweare__body">
               <div class="whoweare__video">
-                <!-- Вставляем видео с you tube -->
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/6MUuoNX6IdQ" title="YouTube video player"
-                 frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen></iframe>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/qURd_jDrQsI" title="YouTube video player"
+                frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
               </div>
               <div class="whoweare__content">
                 <div class="whoweare__top">
                   <h2 class="whoweare__title">Most trusted in our field</h2>
                   <div class="whoweare__text">
-                    Most calendars are designed for teams. Slate
-                    is designed for freelancers who want a
+                    Most calendars are designed for teams. Slate 
+                    is designed for freelancers who want a 
                     simple way to plan their schedule.
                   </div>
                 </div>
                 <div class="whoweare__items">
                   <div class="whoweare__item item-whoweare">
                     <div class="item-whoweare__icon">
-                      <img src="/another/whoweare/01.svg" alt="">
+                      <img src="/pictures/another/whoweare/01.svg" alt="">
                     </div>
                     <div class="item-whoweare__body">
                       <div class="item-whoweare__title">the quick fox jumps over the lazy dog</div>
@@ -262,7 +250,7 @@
                   </div>
                   <div class="whoweare__item item-whoweare">
                     <div class="item-whoweare__icon">
-                      <img src="/another/whoweare/02.svg" alt="">
+                      <img src="/pictures/another/whoweare/02.svg" alt="">
                     </div>
                     <div class="item-whoweare__body">
                       <div class="item-whoweare__title">the quick fox jumps over the lazy dog</div>
@@ -279,22 +267,22 @@
           <div class="clients__container _container">
             <div class="clients__items">
               <div class="clients__item">
-                <img src="/another/clients/01.png" alt="clients">
+                <img src="/pictures/another/clients/01.png" alt="clients">
               </div>
               <div class="clients__item">
-                <img src="/another/clients/02.png" alt="clients">
+                <img src="/pictures/another/clients/02.png" alt="clients">
               </div>
               <div class="clients__item">
-                <img src="/another/clients/03.png" alt="clients">
+                <img src="/pictures/another/clients/03.png" alt="clients">
               </div>
                <div class="clients__item">
-                <img src="/another/clients/04.png" alt="clients">
+                <img src="/pictures/another/clients/04.png" alt="clients">
               </div>
               <div class="clients__item">
-                <img src="/another/clients/05.png" alt="clients">
+                <img src="/pictures/another/clients/05.png" alt="clients">
               </div>
               <div class="clients__item">
-                <img src="/another/clients/06.png" alt="clients">
+                <img src="/pictures/another/clients/06.png" alt="clients">
               </div>
             </div>
           </div>
@@ -312,21 +300,21 @@
             </div>
           </div>
         </section>
-
+        
         <section class="page__getintouch getintouch">
           <div class="getintouch__container _container">
             <div class="getintouch__header header-block">
               <h2 class="header-block__title">Get In Touch</h2>
               <div class="header-block__sub-title">
                 Problems trying to resolve the conflict between <br>
-                the two major realms of Classical physics: Newtonian mechanics
+                the two major realms of Classical physics: Newtonian mechanics   
               </div>
             </div>
             <div class="getintouch__items">
 
               <div class="getintouch__item item-getintouch">
                 <div class="item-getintouch__icon">
-                  <img src="/another/getintouch/01.svg" alt="getintouch">
+                  <img src="/pictures/another/getintouch/01.svg" alt="getintouch">
                 </div>
                 <div class="item-getintouch__emails">
                   <!-- mailto: чтобы пользователь при клике мог перейти сразу в почтовый клиент -->
@@ -339,7 +327,7 @@
 
               <div class="getintouch__item item-getintouch item-getintouch_active">
                 <div class="item-getintouch__icon">
-                  <img src="/another/getintouch/02.svg" alt="getintouch">
+                  <img src="/pictures/another/getintouch/02.svg" alt="getintouch">
                 </div>
                 <div class="item-getintouch__emails">
                   <!-- mailto: чтобы пользователь при клике мог перейти сразу в почтовый клиент -->
@@ -352,7 +340,7 @@
 
               <div class="getintouch__item item-getintouch">
                 <div class="item-getintouch__icon">
-                  <img src="/another/getintouch/03.svg" alt="getintouch">
+                  <img src="/pictures/another/getintouch/03.svg" alt="getintouch">
                 </div>
                 <div class="item-getintouch__emails">
                   <!-- mailto: чтобы пользователь при клике мог перейти сразу в почтовый клиент -->
@@ -415,7 +403,7 @@
                     <li class="menu-footer__item"><a href="" class="menu-footer__link">We are hiring</a></li>
                     <li class="menu-footer__item"><a href="" class="menu-footer__link">Blog</a></li>
                   </ul>
-                </nav>
+                </nav>  
               </div>
               <div class="footer__column">
                 <div class="footer__label">Resources</div>
@@ -426,7 +414,7 @@
                     <li class="menu-footer__item"><a href="" class="menu-footer__link">We are hiring</a></li>
                     <li class="menu-footer__item"><a href="" class="menu-footer__link">Blog</a></li>
                   </ul>
-                </nav>
+                </nav>  
               </div>
               <div class="footer__column">
                 <div class="footer__label">Get In Touch</div>
@@ -444,16 +432,16 @@
             <div class="footer__copy">Made With Love By Figmaland All Right Reserved</div>
             <div class="footer__social social">
               <a href="" class="social__item">
-                <img src="/another/footer/social/01.svg" alt="social">
+                <img src="/pictures/another/footer/social/01.svg" alt="social">
               </a>
               <a href="" class="social__item">
-                <img src="/another/footer/social/02.svg" alt="social">
+                <img src="/pictures/another/footer/social/02.svg" alt="social">
               </a>
               <a href="" class="social__item">
-                <img src="/another/footer/social/03.svg" alt="social">
+                <img src="/pictures/another/footer/social/03.svg" alt="social">
               </a>
               <a href="" class="social__item">
-                <img src="/another/footer/social/04.svg" alt="social">
+                <img src="/pictures/another/footer/social/04.svg" alt="social">
               </a>
             </div>
           </div>
@@ -461,7 +449,6 @@
       </footer>
 
     </div>
-    <!--Ещё правильно подключить его надо?-->
     <script src="js/script.js"></script>
   </body>
 </html>
